@@ -1,4 +1,8 @@
-import {FetchError} from "../../util/relay/useRelayEnvironmentCreator.ts";
+import {
+    FETCH_ERROR_MISSING_CREDENTIALS,
+    FETCH_ERROR_UNAUTHORIZED,
+    FetchError
+} from "../../util/relay/useRelayEnvironmentCreator.ts";
 import {useRouter} from "found";
 import {LoginForm} from "../LoginForm.tsx";
 
@@ -6,7 +10,7 @@ type Props = { error: Error & FetchError, resetErrorBoundary: () => void};
 
 export function ErrorFallback({ error, resetErrorBoundary }: Props) {
     const {router} = useRouter();
-    if (error.message === 'unauthorized' || error.message === 'missing-credentials') {
+    if (error.message === FETCH_ERROR_UNAUTHORIZED || error.message === FETCH_ERROR_MISSING_CREDENTIALS) {
         return (
             <div className="m-8">
                 <h2 className="text-blue-500 font-bold text-2xl mb-4">Sitzung abgelaufen</h2>

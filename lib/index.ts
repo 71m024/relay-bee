@@ -19,7 +19,7 @@ export {EnvironmentContext} from "./util/environment/EnvironmentContext.ts"
 export {useEnv} from "./util/environment/useEnv.ts"
 
 // util/router
-export {createRouteConfig} from "./util/router/createRouteConfig.ts"
+export {createRouteConfig} from "./util/router/createRouteConfig.tsx"
 export {PeerRouterProvider} from "./util/router/PeerRouterProvider.tsx"
 
 // -- components
@@ -40,12 +40,12 @@ export {useRefetchListContext} from "./components/page/refetch-list-context/useR
 export {ListPage} from "./components/page/list/ListPage.tsx"
 export {getDefaultListRoute} from "./components/page/list/getDefaultListRoute.ts"
 // components/page/list/table
-export {useTable} from "./components/page/list/table/useTable.ts"
 export {TableHeader} from "./components/page/list/table/TableHeader.tsx"
 export {TableCell} from "./components/page/list/table/TableCell.tsx"
 export {TableButtons} from "./components/page/list/table/TableButtons.tsx"
 export {TableBody} from "./components/page/list/table/TableBody.tsx"
 export {AutoLoadTable} from "./components/page/list/table/AutoLoadTable.tsx"
+export {useSorting} from "./components/page/list/table/sort/useSorting.ts"
 // components/page/detail
 export type {ValidData} from "./components/page/detail/useEntitySaver.ts"
 export {useEntitySaver} from "./components/page/detail/useEntitySaver.ts"

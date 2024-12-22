@@ -14,6 +14,7 @@ export const sortingCombinationToQuery
 export function useSorting<T>() {
     const {match, router} = useRouter()
     const searchParamArray: SearchParamsArray = Array.from(Object.entries(match.location.query))
+    const sortHeader = (key: keyof T) => ({sortKey: key})
 
     const setQueryParams = (sortingCombination: SortingCombination<T>) => {
         router.replace({
@@ -46,5 +47,5 @@ export function useSorting<T>() {
     }
 
     const sortingQuery = Object.entries(sortingCombination).map(([c, o]) => ({[c]: o}))
-    return {sortingCombination, sortingQuery, sort}
+    return {sortingCombination, sortingQuery, sort, sortHeader}
 }
